@@ -43,12 +43,6 @@ var myChartHumidity = new Chart(ctxh, {
     }
 });
 
-
-
-
-
-
-
 let lastAccelerationUpdate = 0;
 let lastAccelerationUpdateH = 0;
 let humidityCharacteristic;
@@ -104,9 +98,8 @@ function handleTemperatureChanged(event) {
         addData(myChart, '', res);
         if (res > 30 || res < 10) {
             document.querySelector('.alertTemp').style.display = 'block';
-            document.querySelector('#outputTemp').style.color = 'red';
         } else {
-            document.querySelector('#outputTemp').style.color = 'black';
+
         }
     }
 }
@@ -118,10 +111,10 @@ function handleAccelerationChanged(event) {
     if (res > 140) {
         chute_bool = true;
         document.querySelector('.alertChute').style.display = 'block';
-        document.querySelector('#outputAccel').style.color = 'red';
+        // document.querySelector('#outputAccel').style.color = 'red';
     } else {
         // document.querySelector('.alert').style.display = 'none';
-        document.querySelector('#outputAccel').style.color = 'black';
+        // document.querySelector('#outputAccel').style.color = 'black';
     }
 }
 
@@ -131,8 +124,7 @@ function handleHumidityChanged(event) {
         lastAccelerationUpdateH = currentTime;
         let humidity = event.target.value.getFloat32(0, true);
         let res_humidity = Math.round(humidity * 100) / 100;
-        console.log(res_humidity);
-        // document.querySelector('#outputHumidity').innerHTML = '<br>Humidité: ' + res_humidity + 'm/s²';
+        // console.log(res_humidity);
         addData(myChartHumidity, '', res_humidity);
         if (res_humidity > 80 || res_humidity < 20) {
             document.querySelector('.alertHumidity').style.display = 'block';
@@ -145,12 +137,18 @@ function handleHumidityChanged(event) {
 function display_alert() {
     document.querySelector('.alertChute').style.display = 'block';
 }
-document.querySelector('#okButton').addEventListener('click', function () {
+document.querySelector('#okButtonChute').addEventListener('click', function () {
     document.querySelector('.alertChute').style.display = 'none';
     document.querySelector('.alertTemp').style.display = 'none';
     document.querySelector('.alertHumidity').style.display = 'none';
 });
 
+document.querySelector('#okButtonTemp').addEventListener('click', function () {
+    document.querySelector('.alertTemp').style.display = 'none';
+});
+document.querySelector('#okButtonHumidity').addEventListener('click', function () {
+    document.querySelector('.alertHumidity').style.display = 'none';
+});
 
 function bluetoothConnected() {
     console.log("Connecté!!!");

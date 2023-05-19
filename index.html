@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/img/logo_safewear.png" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
 </head>
 
 <body>
@@ -24,22 +24,22 @@
     <div class="alertChute" style="display:none;">
         <img src="/img/chute.png" alt="chute" class="imgchute">
         <p class="alertText">CHUTE DETECTE</p>
-        <p >Assurez vous que la personne va bien ou appelez les secours.</p>
-        <button id="okButton">Tout va bien.</button>
+        <p>Assurez vous que la personne va bien ou appelez les secours.</p>
+        <button id="okButtonChute">Tout va bien.</button>
     </div>
 
     <div class="alertTemp" style="display:none;">
         <img src="/img/temperature.png" alt="temperature" class="imgtemp">
         <p class="alertText">TEMPERATURE INADEQUATE</p>
         <p>Assurez vous que la personne va bien ou appelez les secours.</p>
-        <button id="okButton">Tout va bien.</button>
+        <button id="okButtonTemp">Tout va bien.</button>
     </div>
 
     <div class="alertHumidity" style="display:none;">
-        <img src="/img/humidity.png" alt="humidity" class="imghumidity">
-        <p class="alertText">HUMIDITE INADEQUATE</p>
+        <img src="/img/humidite.png" alt="humidity" class="imghumidity">
+        <p class="alertTextHumidity">HUMIDITE INADEQUATE</p>
         <p>Assurez vous que la personne va bien ou appelez les secours.</p>
-        <button id="okButton">Tout va bien.</button>
+        <button id="okButtonHumidity">Tout va bien.</button>
     </div>
 
     <div class="outputMain">
@@ -64,7 +64,7 @@
             <div class="canvau"><canvas id="myChart"></canvas></div>
             <div class="canvad"><canvas id="myChartHumidity"></canvas></div>
         </div>
-       
+
     </div>
 
     <script src="script.js"></script>
